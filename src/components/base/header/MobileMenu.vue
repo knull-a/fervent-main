@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import SearchBar from './SearchBar.vue'
 import NavigationLinks from './NavigationLinks.vue'
-import MainLogo from './MainLogo.vue'
+import MainLogo from '@/components/icons/IconLogo.vue'
 import { X } from 'lucide-vue-next'
 import { shopInfo } from '@/lib/config'
 type Props = {

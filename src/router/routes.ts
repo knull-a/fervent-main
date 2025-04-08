@@ -72,6 +72,27 @@ export const mainCategoryRoutes = [
   },
 ]
 
+export const infoRoutes = [
+  {
+    name: 'Политика конфиденциальности',
+    path: '/privacy-policy',
+    meta: { layout: 'LayoutMain' },
+    component: () => import('@/views/PrivacyPolicyView.vue'),
+  },
+  {
+    name: 'Пользовательское соглашение',
+    path: '/user-agreement',
+    meta: { layout: 'LayoutMain' },
+    component: () => import('@/views/UserAgreementView.vue'),
+  },
+  {
+    name: 'Договор оферты',
+    path: '/offer-agreement',
+    meta: { layout: 'LayoutMain' },
+    component: () => import('@/views/OfferAgreementView.vue'),
+  },
+]
+
 export default [
   {
     path: '/',
@@ -82,4 +103,6 @@ export default [
     component: () => import('@/views/HomeView.vue'),
   },
   ...mainMenuRoutes,
+  ...mainCategoryRoutes,
+  ...infoRoutes,
 ]

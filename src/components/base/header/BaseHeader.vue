@@ -3,7 +3,7 @@ import { mainMenuRoutes, mainCategoryRoutes } from '@/router/routes'
 import { Menu } from 'lucide-vue-next'
 import { ref } from 'vue'
 
-import MainLogo from './MainLogo.vue'
+import MainLogo from '@/components/icons/IconLogo.vue'
 import SearchBar from './SearchBar.vue'
 import NavigationLinks from './NavigationLinks.vue'
 import HeaderActions from './HeaderActions.vue'
