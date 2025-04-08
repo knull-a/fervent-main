@@ -11,6 +11,8 @@ import IconMir from '@/components/icons/IconMir.vue'
 import Input from '@/components/ui/input/Input.vue'
 import Button from '@/components/ui/button/Button.vue'
 import IconSend from '@/components/icons/IconSend.vue'
+import { toast } from 'vue-sonner'
+import { ref } from 'vue'
 
 type FooterNavLink = {
   name: string
@@ -50,12 +52,24 @@ const navLinks: FooterNavLink[] = [
     })),
   },
 ]
+
+const email = ref('')
+
+const handleSubscribe = () => {
+  if (!email.value) {
+    toast.error('Введите ваш email')
+    return
+  }
+
+  toast.success('Подписка успешно оформлена')
+  email.value = ''
+}
 </script>
 
 <template>
   <footer class="bg-[#0E0E0E] text-white py-10">
     <div class="container">
-      <div class="flex justify-between pb-6">
+      <div class="flex flex-wrap justify-between gap-6 md:gap-2 pb-6">
         <div class="flex flex-col gap-6">
           <div>
             <IconLogo />
@@ -112,8 +126,9 @@ const navLinks: FooterNavLink[] = [
           <div class="flex flex-col gap-4 max-w-[320px]">
             <p>Подпишитесь на рассылку, чтобы узнавать о новинках первыми</p>
             <div class="flex items-center">
-              <Input class="rounded-none" placeholder="Введите ваш email" />
+              <Input class="rounded-none" v-model="email" placeholder="Введите ваш email" />
               <Button
+                @click="handleSubscribe"
                 variant="outline"
                 class="rounded-none bg-transparent hover:bg-transparent hover:brightness-110"
               >
