@@ -1,3 +1,9 @@
+<script setup lang="ts">
+import LayoutWrapper from '@/components/layout/LayoutWrapper.vue'
+</script>
+
 <template>
-  <RouterView />
+  <LayoutWrapper>
+    <RouterView />
+  </LayoutWrapper>
 </template>
