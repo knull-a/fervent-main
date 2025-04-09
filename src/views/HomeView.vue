@@ -13,6 +13,11 @@ import IconAdvantage2 from '@/components/icons/IconAdvantage2.vue'
 import IconAdvantage3 from '@/components/icons/IconAdvantage3.vue'
 import IconAdvantage4 from '@/components/icons/IconAdvantage4.vue'
 import BaseAdvantage from '@/components/base/advantage/BaseAdvantage.vue'
+import IconBrand1 from '@/components/icons/IconBrand1.vue'
+import IconBrand2 from '@/components/icons/IconBrand2.vue'
+import IconBrand3 from '@/components/icons/IconBrand3.vue'
+import IconBrand4 from '@/components/icons/IconBrand4.vue'
+import IconBrand5 from '@/components/icons/IconBrand5.vue'
 
 const newArrivals = Array(8).fill({
   title: 'adidas originals Campus 00s Core Black',
@@ -92,6 +97,16 @@ const advantages = [
           :description="advantage.description"
         />
       </div>
+    </div>
+  </BaseSection>
+
+  <BaseSection title="Популярные бренды">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-14">
+      <IconBrand1 />
+      <IconBrand2 />
+      <IconBrand3 />
+      <IconBrand4 />
+      <IconBrand5 />
     </div>
   </BaseSection>
 </template>
