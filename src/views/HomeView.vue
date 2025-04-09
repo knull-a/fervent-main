@@ -18,6 +18,8 @@ import IconBrand2 from '@/components/icons/IconBrand2.vue'
 import IconBrand3 from '@/components/icons/IconBrand3.vue'
 import IconBrand4 from '@/components/icons/IconBrand4.vue'
 import IconBrand5 from '@/components/icons/IconBrand5.vue'
+import Button from '@/components/ui/button/Button.vue'
+import IconQuestion from '@/components/icons/IconQuestion.vue'
 
 const newArrivals = Array(8).fill({
   title: 'adidas originals Campus 00s Core Black',
@@ -109,4 +111,22 @@ const advantages = [
       <IconBrand5 />
     </div>
   </BaseSection>
+
+  <div
+    class="bg-[url(@/assets/img/individual-order-bg-1.png)] bg-cover bg-center bg-no-repeat py-16"
+  >
+    <div
+      class="container text-center flex flex-col gap-6 items-center justify-center text-[#515559]"
+    >
+      <IconQuestion />
+      <h2 class="text-2xl">Не нашли подходящий товар?</h2>
+      <p class="text-sm">
+        Мы найдем для вас любую интересующую позицию и доставим в кратчайшие сроки
+      </p>
+
+      <Button class="bg-[#777777] text-white text-base p-6 rounded-none whitespace-normal">
+        ОФОРМИТЬ ИНДИВИДУАЛЬНЫЙ ЗАКАЗ
+      </Button>
+    </div>
+  </div>
 </template>
