@@ -5,10 +5,53 @@ import CarouselItem from '@/components/ui/carousel/CarouselItem.vue'
 import CarouselPrevious from '@/components/ui/carousel/CarouselPrevious.vue'
 import CarouselNext from '@/components/ui/carousel/CarouselNext.vue'
 import BaseSection from '@/components/base/section/BaseSection.vue'
-import BaseCard from '@/components/base/card/BaseCard.vue'
+import CardList from '@/components/base/card/CardList.vue'
 import cardProduct1 from '@/assets/img/card-product-1.png'
 import cardProduct2 from '@/assets/img/card-product-2.png'
-import Button from '@/components/ui/button/Button.vue'
+import IconAdvantage1 from '@/components/icons/IconAdvantage1.vue'
+import IconAdvantage2 from '@/components/icons/IconAdvantage2.vue'
+import IconAdvantage3 from '@/components/icons/IconAdvantage3.vue'
+import IconAdvantage4 from '@/components/icons/IconAdvantage4.vue'
+import BaseAdvantage from '@/components/base/advantage/BaseAdvantage.vue'
+
+const newArrivals = Array(8).fill({
+  title: 'adidas originals Campus 00s Core Black',
+  price: 13250,
+  imageUrl: cardProduct1,
+})
+
+const recommended = Array(8).fill({
+  title: 'Солнечные очки Ray-Ban RB3026',
+  price: 1500,
+  imageUrl: cardProduct2,
+})
+
+const advantages = [
+  {
+    icon: IconAdvantage1,
+    title: 'Большой выбор',
+    description:
+      'Огромный ассортимент товаров на любой вкус и потребность. У нас вы найдёте всё: от эксклюзивных новинок до проверенных временем хитов. Выбирайте лучшее среди множества вариантов!',
+  },
+  {
+    icon: IconAdvantage2,
+    title: 'Проверка на подлинность',
+    description:
+      'Гарантируем 100% оригинальность! Каждый товар проходит тщательную проверку, чтобы вы получали только подлинную продукцию от надёжных поставщиков. Покупайте с уверенностью!',
+  },
+  {
+    icon: IconAdvantage3,
+    title: 'Быстрая доставка',
+    description:
+      'Оперативно отправляем заказы, чтобы вы получили свой товар в кратчайшие сроки. Надёжные службы доставки и удобные варианты получения для вашего комфорта!',
+  },
+  {
+    icon: IconAdvantage4,
+    title: 'Безопасные сделки',
+    description:
+      'Каждая покупка защищена! Гарантируем надёжные способы оплаты и полную конфиденциальность ваших данных. Покупайте без рисков!',
+  },
+]
 </script>
 
 <template>
@@ -29,34 +72,26 @@ import Button from '@/components/ui/button/Button.vue'
   </Carousel>
 
   <BaseSection title="Новые поступления">
-    <div class="flex flex-col gap-8 justify-center">
-      <div class="grid md:grid-cols-4 grid-cols-2 gap-4">
-        <BaseCard
-          v-for="_ in 8"
-          :key="_"
-          title="adidas originals Campus 00s Core Black"
-          :price="13250"
-          :imageUrl="cardProduct1"
-        />
-      </div>
-
-      <Button variant="outline" class="uppercase m-auto rounded-none p-6"> Смотреть все </Button>
-    </div>
+    <CardList title="Новые поступления" :cards="newArrivals" />
   </BaseSection>
 
   <BaseSection title="Рекомендованные">
-    <div class="flex flex-col gap-8 justify-center">
-      <div class="grid md:grid-cols-4 grid-cols-2 gap-4">
-        <BaseCard
-          v-for="_ in 8"
-          :key="_"
-          title="Солнечные очки Ray-Ban RB3026"
-          :price="1500"
-          :imageUrl="cardProduct2"
+    <CardList title="Рекомендованные" :cards="recommended" />
+  </BaseSection>
+
+  <BaseSection title="Наши преимущества">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-14">
+      <img class="w-full md:w-1/2" src="@/assets/img/advantages-1.png" alt="Преимущество" />
+
+      <div class="flex flex-col gap-10">
+        <BaseAdvantage
+          v-for="advantage in advantages"
+          :key="advantage.title"
+          :icon="advantage.icon"
+          :title="advantage.title"
+          :description="advantage.description"
         />
       </div>
-
-      <Button variant="outline" class="uppercase m-auto rounded-none p-6"> Смотреть все </Button>
     </div>
   </BaseSection>
 </template>
