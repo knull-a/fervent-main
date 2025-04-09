@@ -1,8 +1,30 @@
 <script setup lang="ts">
-import Button from '@/components/ui/button/Button.vue'
+import Carousel from '@/components/ui/carousel/Carousel.vue'
+import CarouselContent from '@/components/ui/carousel/CarouselContent.vue'
+import CarouselItem from '@/components/ui/carousel/CarouselItem.vue'
+import CarouselPrevious from '@/components/ui/carousel/CarouselPrevious.vue'
+import CarouselNext from '@/components/ui/carousel/CarouselNext.vue'
 </script>
 
 <template>
-  <h1 class="text-3xl font-bold">Home</h1>
-  <Button>Click me</Button>
+  <Carousel
+    class="relative w-full m-auto"
+    :opts="{
+      align: 'start',
+    }"
+  >
+    <CarouselContent>
+      <CarouselItem>
+        <img src="@/assets/img/banner-carousel-1.png" />
+      </CarouselItem>
+      <CarouselItem>
+        <img src="@/assets/img/banner-carousel-1.png" />
+      </CarouselItem>
+      <CarouselItem>
+        <img src="@/assets/img/banner-carousel-1.png" />
+      </CarouselItem>
+    </CarouselContent>
+    <CarouselPrevious />
+    <CarouselNext />
+  </Carousel>
 </template>
